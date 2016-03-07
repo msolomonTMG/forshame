@@ -1,14 +1,14 @@
 require 'sinatra'
 require 'json'
 require 'rest-client'
+require './dev_variables' if File.exists?('./dev_variables.rb')
 
 get '/' do
 	erb :index
 end
 
 get '/api/v1/timesheetDocument' do
-	timesheetDocument = get_data "https://thrillistmediagroup.atlassian.net/secure/TempoTeamBoard!timesheet.jspa?team=14&use-ISO8061-week-numbers=false&period=0116&periodType=MONTH&periodView=PERIOD&from=&to=&exact=&span="
-
+	timesheetDocument = get_data "https://thrillistmediagroup.atlassian.net/secure/TempoTeamBoard!timesheet.jspa?v=1&periodType=BILLING&periodView=PERIOD&period=0216"
 	content_type :json
 		{ :timesheetDocument => timesheetDocument }.to_json
 end

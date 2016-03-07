@@ -60,9 +60,9 @@ $(document).ready(function(){
     users.sort(percentLoggedDesc);
     // remove the loading icon
     $('#loading-icon').remove();
-    // if the user has less than 100% of their time logged, add them to the page
+    // if the user has less than 90% of their time logged, add them to the page
     users.forEach(function(user) {
-      if (user.percentLogged < 100) {
+      if (user.percentLogged < 90) {
         addDeliquentToPage(user);
       }
     });
