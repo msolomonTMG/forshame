@@ -35,6 +35,16 @@ $(document).ready(function(){
         user.username = $( $(row).find('.username')[0] ).attr('data-tempo-user');
         user.percentLogged = parseInt($( $(row).find('.color-percentage')[0] ).text().replace(/\s/g, "").split('%')[0]);
         user.displayName = $( $(row).find('.username')[0] ).first().text().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        if (photoCollection.hasOwnProperty(user.username)) {
+          user.photos = photoCollection[user.username]['photos'];
+        } else {
+          user.photos = ["img/thumb-1.jpg", "img/thumb-2.jpg", "img/thumb-3.jpg", "img/thumb-4.jpg"];
+        }
+        if (excludedUsers.indexOf(user.username) > -1) {
+          user.excluded = true;
+        } else {
+          user.excluded = false;
+        }
         users.push(user);
       });
 
@@ -45,7 +55,7 @@ $(document).ready(function(){
         resolve(users);
       } else {
         reject(Error('No timesheets could be fetched'));
-        }
+      }
     }
   });
 
@@ -62,7 +72,7 @@ $(document).ready(function(){
     $('#loading-icon').remove();
     // if the user has less than 90% of their time logged, add them to the page
     users.forEach(function(user) {
-      if (user.percentLogged < 90) {
+      if (user.percentLogged < 90 && !user.excluded) {
         addDeliquentToPage(user);
       }
     });
@@ -83,19 +93,15 @@ $(document).ready(function(){
       if (a.percentLogged < b.percentLogged) {
         return -1;
       } else if (a.percentLogged > b.percentLogged) {
-          return 1;
-        } else {
-            return 0;
-          }
+        return 1;
+      } else {
+        return 0;
+      }
     }
     // add the deliquent to the page
     function addDeliquentToPage(user) {
       var deliquentHTML = '<li>\
-  			<ul class="cd-item-wrapper">\
-  				<li class="cd-item-front"><a href="#0"><img src="img/thumb-1.jpg" alt="Preview image"></a></li>\
-  				<li class="cd-item-middle"><a href="#0"><img src="img/thumb-2.jpg" alt="Preview image"></a></li>\
-  				<li class="cd-item-back"><a href="#0"><img src="img/thumb-3.jpg" alt="Preview image"></a></li>\
-  				<li class="cd-item-out"><a href="#0"><img src="img/thumb-4.jpg" alt="Preview image"></a></li>\
+  			<ul id="photos_' + user.username + '" class="cd-item-wrapper">\
   				<!-- <li class="cd-item-out">...</li> -->\
   			</ul> <!-- cd-item-wrapper -->\
   			<div class="cd-item-info">\
@@ -114,6 +120,31 @@ $(document).ready(function(){
   		</li>';
 
       $('#cd-gallery-items').append(deliquentHTML);
+
+      var photoDiv = $('#photos_' + user.username);
+      var i = 0;
+      var className = "";
+      while (i < user.photos.length && i < 4) {
+        switch(i) {
+          case 0:
+            className = "cd-item-front";
+            break;
+          case 1:
+            className = "cd-item-middle";
+            break;
+          case 2:
+            className = "cd-item-back";
+            break;
+          case 3:
+            className = "cd-item-out";
+            break;
+        }
+        $(photoDiv).append('<li class="' + className + '"><a href="#0"><img src="' + user.photos[i] + '"></a></li>');
+        i++;
+      }
+      // user.photos.forEach(function(photo) {
+      //   photoDiv.append('<li class="cd-item-front"><a href="#0"><img src="' + photo + '"></a></li>');
+      // });
 
       $('#' + user.username + '-chart').knob({
         readOnly: true,
