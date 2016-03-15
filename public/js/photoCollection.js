@@ -1,8 +1,4 @@
 var photoCollection = {
-  "emchale": {
-    "photos": [
-    ]
-  },
   "kboateng": {
     "photos": [
       "https://media.giphy.com/media/41zG0LWQlPTAQ/giphy.gif"
