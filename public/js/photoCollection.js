@@ -6,7 +6,7 @@ var photoCollection = {
   },
   "cskae": {
     "photos": [
-      "/img/cskae/img_1.png"
+      "http://i.imgur.com/QCEebFm.png"
     ]
   },
   "mhaarhaus": {

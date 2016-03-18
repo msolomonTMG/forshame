@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'json'
 require 'rest-client'
-require 'rack/flash-session'
 require './dev_variables' if File.exists?('./dev_variables.rb')
 
 get '/' do
