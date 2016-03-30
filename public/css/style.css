@@ -19,6 +19,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: #323d55;
   background-color: #d8d8d8;
+  overflow-x: hidden;
 }
 
 a {
@@ -133,6 +134,7 @@ header h1 {
   -webkit-perspective-origin: 50% -30%;
   -moz-perspective-origin: 50% -30%;
   perspective-origin: 50% -30%;
+  overflow-y: hidden;
 }
 .cd-item-wrapper li {
   position: absolute;
