@@ -1,4 +1,4 @@
-# For Shame
+# [For Shame](http://www.forsha.me/)
 A website to shame those who do not complete their timesheets
 
 ## Contribute
