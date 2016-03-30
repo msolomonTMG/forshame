@@ -13,5 +13,10 @@ var photoCollection = {
     "photos": [
       "https://media.giphy.com/media/O60o6B2N2ZMxG/giphy.gif"
     ]
+  },
+  "sleonard": {
+    "photos": [
+      "http://i.imgur.com/abnGvsq.gif"
+    ]
   }
 }
