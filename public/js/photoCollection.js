@@ -15,6 +15,11 @@ var photoCollection = {
       "http://i.imgur.com/QCEebFm.png"
     ]
   },
+  "kpeltzer": {
+    "photos": [
+      "http://i.imgur.com/9JuGa3E.png"
+    ]
+  },
   "mhaarhaus": {
     "photos": [
       "https://media.giphy.com/media/O60o6B2N2ZMxG/giphy.gif"
