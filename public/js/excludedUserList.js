@@ -1,3 +1,3 @@
 var excludedUsers = [
-  "smehta"
+  "kchan"
 ]
