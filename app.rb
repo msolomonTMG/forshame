@@ -8,7 +8,7 @@ get '/' do
 end
 
 get '/api/v1/timesheetDocument' do
-	timesheetDocument = get_data "https://thrillistmediagroup.atlassian.net/secure/TempoTeamBoard!timesheet.jspa?v=1&periodType=BILLING&periodView=PERIOD&period=0416"
+	timesheetDocument = get_data "https://thrillistmediagroup.atlassian.net/secure/TempoTeamBoard!timesheet.jspa?v=1&periodType=BILLING&periodView=PERIOD&period=0516"
 	content_type :json
 		{ :timesheetDocument => timesheetDocument }.to_json
 end
