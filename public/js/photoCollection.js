@@ -4,6 +4,11 @@ var photoCollection = {
       "https://media.giphy.com/media/41zG0LWQlPTAQ/giphy.gif"
     ]
   },
+  "annie": {
+    "photos": [
+      "http://i.imgur.com/K8wWE2W.png"
+    ]
+  },
   "bsmith": {
     "photos": [
       "http://i.imgur.com/bEEwcQK.jpg"
