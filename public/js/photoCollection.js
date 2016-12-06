@@ -20,6 +20,11 @@ var photoCollection = {
       "http://i.imgur.com/QCEebFm.png"
     ]
   },
+  "emchale": {
+    "photos": [
+      "https://files.slack.com/files-pri/T376NB673-F3BU3J8A3/img_0064.jpg"
+    ]
+  },
   "kpeltzer": {
     "photos": [
       "http://i.imgur.com/9JuGa3E.png"
