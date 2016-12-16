@@ -16,6 +16,7 @@ var photoCollection = {
   },
   "cskae": {
     "photos": [
+      "http://i.imgur.com/rESf3Fj.jpg",
       "https://s3.amazonaws.com/f.cl.ly/items/2y1c0i1w0K3G291L2H1c/206453_1008942147149_9150_n.jpg?v=b045da03",
       "http://i.imgur.com/QCEebFm.png"
     ]
